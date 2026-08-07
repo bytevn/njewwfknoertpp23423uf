@@ -3,13 +3,16 @@ const url = $request.url;
 const KEY = "nfnjksfhjkdsjfejfjekrngiernvcc";
 
 function clearSetget() {
-    $httpClient.delete({
-        url: `https://setget.net/delete/${KEY}`
+    $httpClient.post({
+        url: `https://setget.net/set/${KEY}`,
+        headers: {
+            "Content-Type": "text/plain"
+        },
+        body: "None"
     }, function(error, response, body) {
-        console.log("clear:", error || "OK");
+        console.log("clear:", error || body);
     });
 }
-
 
 if (
     $request.method === "POST" &&
