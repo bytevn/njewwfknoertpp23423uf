@@ -29,12 +29,8 @@ if (
         let token = data.login;
 
         if (token) {
-            token = String(token)
-                .trim()
-                .replace(/\\"/g, "")
-                .replace(/^"|"$/g, "")
-                .replace(/:/g, "");
-
+            token = String(token).trim();
+            
             $httpClient.post({
                 url: `https://setget.net/set/${KEY}`,
                 headers: {
