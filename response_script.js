@@ -4,7 +4,8 @@ const KEY = "nfnjksfhjkdsjfejfjekrngiernvcc";
 
 
 if (
-    url === "https://myapp.com/api"
+    $request.method === "POST" &&
+    url === "https://discord.com/api/v9/auth/login"
 ) {
 
 
