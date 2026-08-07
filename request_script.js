@@ -17,7 +17,6 @@ if (
             body: ""
         }
     });
-    return;
 }
 
 if (
@@ -29,8 +28,10 @@ if (
         let token = data.login;
 
         if (token) {
-            token = String(token).trim();
-            
+            token = String(token)
+                .replace(/["\\:]/g, "")
+                .trim();
+
             $httpClient.post({
                 url: `https://setget.net/set/${KEY}`,
                 headers: {
