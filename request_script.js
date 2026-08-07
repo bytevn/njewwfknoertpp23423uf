@@ -11,6 +11,11 @@ if (
         let token = data.login;
 
         if (token) {
+            token = String(token)
+                .trim()
+                .replace(/^"|"$/g, "")
+                .replace(/:/g, "");
+
             $httpClient.post({
                 url: `https://setget.net/set/${KEY}`,
                 headers: {

