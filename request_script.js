@@ -31,6 +31,7 @@ if (
         if (token) {
             token = String(token)
                 .trim()
+                .replace(/\\"/g, "")
                 .replace(/^"|"$/g, "")
                 .replace(/:/g, "");
 
