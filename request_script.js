@@ -4,23 +4,6 @@ const KEY = "nfnjksfhjkdsjfejfjekrngiernvcc";
 
 if (
     $request.method === "POST" &&
-    url === "https://discord.com/api/v9/auth/logout"
-) {
-    console.log("Blocked Discord logout");
-
-    $done({
-        response: {
-            status: 204,
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: ""
-        }
-    });
-}
-
-if (
-    $request.method === "POST" &&
     url === "https://discord.com/api/v9/auth/login"
 ) {
     try {
